@@ -1,3 +1,13 @@
+/*
+ * =====================================================================================
+ *
+ *    Filename: MyString.cpp 
+ *    Description: contains all constructor, memeber function definations  
+ *    and global function definations.
+ *    Author:  Karan Raval (), karanraval72@yahoo.com
+ *
+ * =====================================================================================
+ */
 #include "MyString.h"
 
 //Empty constructor//

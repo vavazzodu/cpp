@@ -1,3 +1,13 @@
+/*
+ * =====================================================================================
+ *
+ *    Filename:  main.cpp
+ *    Description:  main function call
+ *    Author:  Karan Raval (), karanraval72@yahoo.com
+ *
+ * =====================================================================================
+ */
+
 #include "MyString.h"
 using namespace std;
 int main()

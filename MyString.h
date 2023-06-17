@@ -1,3 +1,12 @@
+/*
+ * =====================================================================================
+ *
+ *    Filename: MyString.h
+ *    Description:  Class declarations
+ *    Author:  Karan Raval (), karanraval72@yahoo.com
+ *
+ * =====================================================================================
+ */
 #include <iostream>
 #include <cstring>
 #include <string>
