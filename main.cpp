@@ -2,27 +2,8 @@
 using namespace std;
 int main()
 {
-    //Assignment operator overloading
-    /*MyString a{"Karan"};
-    MyString b;
-    b = a;
-    cout<<"Printing a\n";
-    a.display();
-    cout<<"Printing b\n";
-    b.display();*/
-
-    //Move operator overloading
-    /*MyString a;
-    a = MyString("Karan");
-    cout<<"Printing a\n";
-    a.display();
-    MyString b;
-    b = "Khal";
-    cout<<"Printing b\n";
-    b.display();*/
-
     // - operator overloading
-    MyString karan{"KARAN"};
+    /*MyString karan{"KARAN"};
     MyString raval{"Raval"};
     std::cout<<"karan: ";
     karan.display();
@@ -37,7 +18,18 @@ int main()
     b.display();
     b = -b;
     std::cout<<"b: ";
+    b.display();*/
+    
+    /*MyString a{"Karan"};
+    MyString b{"raval"};
+    a.display();
     b.display();
-    return 0; 
+    MyString c = a + "'s surname is";
+    c.display();
+    b = +b;
+    MyString d = c + " " + b ;
+    d.display();*/
+
+    return 0;
 }
 
