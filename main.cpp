@@ -40,6 +40,13 @@ int main()
     MyString d = c + " " + b ;
     d.display();*/
 
+    MyString first{"Karan"};
+    MyString middle{"Rajeshbhai"};
+    MyString last;
+
+    cout <<"Enter the last name:\n";
+    cin >>last;
+    cout << first <<" "<<middle<<" "<<last<<std::endl;
     return 0;
 }
 

@@ -119,3 +119,16 @@ MyString operator+(const MyString &obj)
     delete []buff;
     return temp;
 }
+std::ostream& operator<<(std::ostream &os, const MyString &rhs)
+{
+    os << rhs.str;
+    return os;
+}
+std::istream& operator>>(std::istream &is, MyString &rhs)
+{
+    char *buff = new char [1000];
+    is >> buff;
+    rhs = MyString{buff};
+    delete []buff;
+    return is;
+}

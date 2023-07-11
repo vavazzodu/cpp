@@ -15,6 +15,8 @@ class MyString {
     friend bool operator==(const MyString &lhs, const MyString &rhs);
     friend MyString operator+(const MyString &lhs, const MyString &rhs);
     friend MyString operator+(const MyString &obj);
+    friend std::ostream& operator<<(std::ostream &os, const MyString &rhs);
+    friend std::istream& operator>>(std::istream &is, MyString &rhs);
 private:
     char *str;
 public:
