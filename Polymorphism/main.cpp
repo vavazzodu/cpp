@@ -15,7 +15,9 @@ int main()
     p2->withdraw(100);
     p3->withdraw(100);
     p4->withdraw(100);
-
+    /* If we do not define virtual destructor the following
+     * will call Account class (Base class) destructor 4 times
+     * and we will have memory leak */ 
     delete(p1);
     delete(p2);
     delete(p3);

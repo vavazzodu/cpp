@@ -8,7 +8,7 @@ class Account {
     public:
         Account();
         Account(double amount);
-        ~Account();
+        virtual ~Account();
         virtual void withdraw(double amount)
         {
             std::cout<<"Account: withdraw\n";
@@ -21,7 +21,7 @@ class SavingsAccount : public Account {
     public:
         SavingsAccount();
         SavingsAccount(double amount, double per);
-        ~SavingsAccount();
+        virtual ~SavingsAccount();
         virtual void withdraw(double amount)
         {
             std::cout<<"SavingsAccount: withdraw\n";
@@ -33,7 +33,7 @@ class CheckingAccount : public Account {
     public:
         CheckingAccount();
         CheckingAccount(double amount, double fee);
-        ~CheckingAccount();
+        virtual ~CheckingAccount();
         virtual void withdraw(double amount)
         {
             std::cout<<"CheckingAccount: withdraw\n";
@@ -46,7 +46,7 @@ class TrustAccount : public Account {
     public:
         TrustAccount();
         TrustAccount(double amount, double min_bal, double bonus);
-        ~TrustAccount();
+        virtual ~TrustAccount();
         virtual void withdraw(double amount)
         {
             std::cout<<"TrustAccount: withdraw\n";
