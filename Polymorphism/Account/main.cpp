@@ -48,7 +48,8 @@ int main()
         std::cout << "Ptr1 is NULL" << std::endl;
 */
     /* Now we will use a vector with smart pointers */
-    //accounts is a vector which contains some unique pointers, pointing to Account class
+/*
+    // Accounts is a vector which contains some unique pointers, pointing to Account class
     std::vector < std::unique_ptr < Account > > accounts;
     accounts.push_back ( std::make_unique<SavingsAccount> ("Karan", 1000, 5) );
     accounts.push_back ( std::make_unique<CheckingAccount> ("Krishna", 1500, 5) );
@@ -57,7 +58,35 @@ int main()
     {
         std::cout << *acc << std::endl;
     }
+*/
+/*
+    // shared_pointer example
+    std::shared_ptr<int> ptr { new int{100} };
+    std::cout <<"ptr: "<<*ptr << std::endl; //100
 
+    std::cout << "use count ptr: "<<ptr.use_count() << std::endl;  //1
+    std::shared_ptr<int> ptr1 {ptr};
+    std::cout <<"ptr1: "<<*ptr1 << std::endl; //100
+    std::cout <<"use count ptr1: "<<ptr1.use_count() << std::endl; //2
+    ptr.reset(); //ptr is resetted and nulled, not it is not pointing to any location
+    std::cout << "use count ptr: "<<ptr.use_count() << std::endl;  //0
+    std::cout <<"use count ptr1: "<<ptr1.use_count() << std::endl; //1
+*/
+    // make shared method and vectors
+    std::shared_ptr<Account> acc1 = std::make_shared<SavingsAccount> ("Karan", 1000, 5);
+    std::shared_ptr<Account> acc2 = std::make_shared<CheckingAccount> ("Krishna", 1200, 2.5);
+    std::cout <<"use count acc1: "<<acc1.use_count() << std::endl; //1
+    
+    std::vector < std::shared_ptr<Account> > accounts;
+    // push_back() works as shared pointers can be copied.
+    accounts.push_back ( acc1 );
+    accounts.push_back ( acc2 );
+    // Since copy of acc1 is happened in the accounts, now two shared pointers are pointing at the heap
+    std::cout <<"use count acc1: "<<acc1.use_count() << std::endl; //2
 
+    for ( const auto &acc: accounts)
+    {
+        std::cout << *acc << std::endl;
+    }
     return 0;
 }
