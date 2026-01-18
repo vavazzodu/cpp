@@ -1,0 +1,48 @@
+#include <iostream>
+#include <string>
+
+double cal_kmph( int km, int hr )
+{
+    /* If hr is zero we will throw an exception 0 (int)
+     * If any one km or hr is negative we will throw a string exception
+     * In any case the logic to calculate kmph wont execute.
+     */
+    if ( hr == 0)
+    {
+        throw 0;
+    }
+    if ( km < 0 || hr < 0)
+    {
+        throw std::string {"Error: Negative value"};
+    }
+    /* If exerything is ok, calculate the kmph and return */
+    return static_cast<double>(km)/hr;
+}
+int main()
+{
+    int km, hr;
+    double kmph;
+    std::cout << "Enter the km value: ";
+    std::cin>>km;
+    std::cout << "Enter the hour value: ";
+    std::cin>>hr;
+    /* putting a code block which can have a problem under the try block 
+     * In cal_kmph() we are throwing an exception, If exception is thrown
+     * the code to print the kmph value will not execute and the catch block
+     * will be executed. */
+    try
+    {
+        kmph = cal_kmph( km, hr );
+        std::cout << "Kmph: "<<kmph<<std::endl;
+    }
+    catch( int &ex)
+    {
+        std::cerr <<"Error: Divided by zero"<< std::endl;
+    }
+    catch( std::string &ex)
+    {
+        std::cerr <<ex<< std::endl;
+    }
+    
+    return 0;
+}
